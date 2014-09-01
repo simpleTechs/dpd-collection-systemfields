@@ -1,0 +1,15 @@
+{
+  "name": "dpd-collection-systemfields",
+  "version": "1.0.0",
+  "description": "System audit fields for deployd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "simpletechs.net"
+  },
+  "license": "FreeBSD",
+  "dependencies": {
+  }
+}
