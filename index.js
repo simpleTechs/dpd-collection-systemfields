@@ -31,8 +31,10 @@ var systemProps = [
                 )
               );
     },
-    shouldUpdate: function(item, create, ctx) {
-      return create;
+    // only update on create
+    // and if !(userEditable && prop set)
+    shouldUpdate: function(item, create, ctx, collectionProp) {
+      return create && !(collectionProp.userEditable && item.createdBy);
     }
   },
   {
@@ -47,8 +49,8 @@ var systemProps = [
                 )
               );
     },
-    shouldUpdate: function(item, create, ctx) {
-      return true;
+    shouldUpdate: function(item, create, ctx, collectionProp) {
+      return true && !(collectionProp.userEditable && item.lastModifiedBy);
     }
   }
 ];
@@ -88,7 +90,7 @@ var systemProps = [
       }
 
       // we may not want to set every property
-      if(!systemProp.shouldUpdate(body, create, ctx)) {
+      if(!systemProp.shouldUpdate(body, create, ctx, collectionProps[systemProp.name])) {
         return;
       }
 
