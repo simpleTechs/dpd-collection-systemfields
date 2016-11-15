@@ -69,6 +69,10 @@ No additional setup is required, as every `Collection` (and every `Resource` tha
 
 View the fields in the dashboard or have them displayed in your app.
 
+### return owner-only results
+
+The [dpd-acl-roles-permissions](https://github.com/coderofsalvation/dpd-acl-roles-permissions) has an integration with this module. Install it to get endpoints which automatically filter on the `createdBy`-field.
+
 ### Credits
 
 `dpd-collection-systemfields` is the work of [simpleTechs.net](https://www.simpletechs.net)
